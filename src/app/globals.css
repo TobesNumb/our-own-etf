@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #f3f5f8; --surface: #ffffff; --surface-2: #eaeff4; --ink: #0f1a2b; --ink-2: #46556a; --muted: #7b8799; --line: #dce2ea;
+  --accent: #215f9a; --accent-soft: #e2ecf6; --accent-ink: #ffffff;
+  --brass: #b4852c; --brass-soft: #f6eedc;
+  --up: #108a74; --up-soft: #ddf3ec; --down: #d1402f; --down-soft: #fbe3e0;
+  --chart-1: #2367a8; --chart-2: #b4852c; --grid: #e6eaf0;
+  --font-display: "Manrope"; --font-body: "IBM Plex Sans"; --font-mono: "IBM Plex Mono";
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0b121b; --surface: #121b27; --surface-2: #1a2534; --ink: #e7ecf2; --ink-2: #b3becc; --muted: #8290a2; --line: #243141;
+    --accent: #5fa3d6; --accent-soft: #16293c; --accent-ink: #0b121b;
+    --brass: #d2a24c; --brass-soft: #2d2614;
+    --up: #27a08a; --up-soft: #10302a; --down: #e05a50; --down-soft: #3a1c19;
+    --chart-1: #3f8ac4; --chart-2: #b98836; --grid: #1f2b3a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0b121b; --surface: #121b27; --surface-2: #1a2534; --ink: #e7ecf2; --ink-2: #b3becc; --muted: #8290a2; --line: #243141;
+  --accent: #5fa3d6; --accent-soft: #16293c; --accent-ink: #0b121b;
+  --brass: #d2a24c; --brass-soft: #2d2614;
+  --up: #27a08a; --up-soft: #10302a; --down: #e05a50; --down-soft: #3a1c19;
+  --chart-1: #3f8ac4; --chart-2: #b98836; --grid: #1f2b3a;
+  color-scheme: dark;
+}
+
+html { background: var(--bg); }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body), system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4 { font-family: var(--font-display), system-ui, sans-serif; text-wrap: balance; }
+.num { font-variant-numeric: tabular-nums; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+@layer components {
+  .card { @apply rounded-xl border border-line bg-surface; }
+  .btn { @apply inline-flex items-center gap-2 rounded-lg border border-line bg-surface px-3 py-1.5 text-sm font-medium text-ink-2 transition hover:border-accent hover:text-ink disabled:cursor-default disabled:opacity-50; }
+  .btn-primary { @apply border-transparent bg-accent text-accent-ink hover:border-transparent hover:text-accent-ink hover:brightness-110; }
+  .btn-danger { @apply hover:border-down hover:text-down; }
+  .input { @apply w-full rounded-lg border border-line bg-surface px-3 py-2 text-sm text-ink placeholder:text-muted focus:border-accent; }
+  .label { @apply font-display text-[0.68rem] font-bold uppercase tracking-[0.08em] text-muted; }
+  .chip { @apply inline-flex items-center gap-1 rounded-full border border-line bg-surface-2 px-2.5 py-0.5 text-xs font-medium text-ink-2; }
+  .chip-accent { @apply border-transparent bg-accent-soft text-accent; }
+  .chip-brass { @apply border-transparent bg-brass-soft text-brass; }
+  .pill { @apply inline-block rounded-full px-2 py-0.5 text-xs font-semibold num; }
+  .pill-up { @apply bg-up-soft text-up; }
+  .pill-down { @apply bg-down-soft text-down; }
+  .pill-flat { @apply bg-surface-2 text-ink-2; }
+  .seg { @apply inline-flex overflow-hidden rounded-lg border border-line bg-surface text-sm; }
+  .seg button { @apply px-3 py-1.5 text-ink-2 transition hover:bg-surface-2; }
+  .seg button[aria-pressed="true"] { @apply bg-ink text-bg font-semibold; }
+}
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }

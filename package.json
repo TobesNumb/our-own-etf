@@ -1,0 +1,32 @@
+{
+  "name": "koerslijst",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Aandelentracker voor de aandelen uit de Bank Delen-lezing van 16 oktober 2026",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "db:reset": "node scripts/reset-db.mjs"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.4.1",
+    "next": "15.5.28",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "recharts": "^3.2.1",
+    "yahoo-finance2": "^3.5.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^22.18.0",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^5.9.2"
+  }
+}

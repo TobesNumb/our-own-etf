@@ -1,0 +1,13 @@
+ticker,naam,tags,notitie
+# Voorbeeldlijst. Vervang deze regels door de aandelen uit de lezing (één per regel).
+# Kolommen: Yahoo-ticker, naam (mag leeg), tags gescheiden door |, notitie uit de lezing (mag leeg).
+KBC.BR,KBC Groep,financiën|dividend,
+ASML.AS,ASML Holding,technologie|kwaliteit,
+AIR.PA,Airbus,industrie,
+SAP.DE,SAP,technologie,
+NESN.SW,Nestlé,consument|dividend,
+NOVO-B.CO,Novo Nordisk,gezondheid,
+AAPL,Apple,technologie,
+MSFT,Microsoft,technologie|kwaliteit,
+UCB.BR,UCB,gezondheid,
+SOLB.BR,Solvay,materialen|dividend,

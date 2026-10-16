@@ -1,0 +1,1 @@
+export default function NotFound(){return <div className="py-20 text-center"><h1 className="text-2xl font-extrabold">Niet gevonden</h1><p className="mt-2 text-ink-2">Deze pagina of dit aandeel bestaat niet.</p><a href="/" className="btn mt-6">Naar het overzicht</a></div>;}
